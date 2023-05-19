@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/resources\/features\/AccountE2ETest[1:12]","start":1683904110527,"end":1683904111045,"title":"src\/test\/resources\/features\/AccountE2ETest[1:12] 11:08:30.527-11:08:31.045 Add Account","className":"failed"},{"id":2,"group":1,"content":"src\/test\/resources\/features\/AccountE2ETest[2:22]","start":1683904111065,"end":1683904111073,"title":"src\/test\/resources\/features\/AccountE2ETest[2:22] 11:08:31.065-11:08:31.073 Add Car","className":"failed"},{"id":3,"group":1,"content":"src\/test\/resources\/features\/AccountE2ETest[3:32]","start":1683904111083,"end":1683904111088,"title":"src\/test\/resources\/features\/AccountE2ETest[3:32] 11:08:31.083-11:08:31.088 Add Account Phone","className":"failed"},{"id":4,"group":1,"content":"src\/test\/resources\/features\/AccountE2ETest[4:42]","start":1683904111095,"end":1683904111099,"title":"src\/test\/resources\/features\/AccountE2ETest[4:42] 11:08:31.095-11:08:31.099 Add Account Address","className":"failed"},{"id":5,"group":1,"content":"src\/test\/resources\/features\/AccountE2ETest[5:52]","start":1683904111107,"end":1683904111110,"title":"src\/test\/resources\/features\/AccountE2ETest[5:52] 11:08:31.107-11:08:31.110 Get Account","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
